@@ -22,7 +22,6 @@ class AllseederTabelSeeder extends Seeder
             'name' => 'Test'
         ]);
 
-
         \App\status::create([
             'name' => 'good'
 
