@@ -9,9 +9,13 @@
 
                     <div class="panel-body">
                         Your Application's Landing Page.
-
-                        @if(Auth::user()->role->id == 1)
-                            <p>You are a admin</p>
+                        @if(Auth::user())
+                            @if(Auth::user()->role->id == 1)
+                                <p>You are a admin</p>
+                            @endif
+                            @if(Auth::user()->role->id == 2)
+                                <p>you are a user</p>
+                            @endif
                         @endif
                     </div>
                 </div>
