@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'], function() {
+    Route::get('/', 'Web\IndexController@index');
 });
+
 
 Route::auth();
 

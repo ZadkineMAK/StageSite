@@ -76,7 +76,7 @@ class AllseederTabelSeeder extends Seeder
         ]);
         \App\User::create([
             'email' => 'admin@admin.nl',
-            'password' => '123456',
+            'password' => bcrypt('123456'),
             'role_id' => '1',
             'contact_id' => '1'
 
@@ -84,7 +84,7 @@ class AllseederTabelSeeder extends Seeder
 
         \App\User::create([
             'email' => 'user@user.nl',
-            'password' => '123456',
+            'password' => bcrypt('123456'),
             'role_id' => '2',
             'contact_id' => '1'
 
