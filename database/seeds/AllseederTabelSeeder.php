@@ -19,6 +19,17 @@ class AllseederTabelSeeder extends Seeder
             'name' => 'User'
         ]);
 
+        \App\role::create([
+            'name' => 'Student'
+        ]);
+
+        \App\role::create([
+            'name' => 'Praktijkopleider'
+        ]);
+        \App\role::create([
+            'name' => 'Docent'
+        ]);
+
 
         \App\status::create([
             'name' => 'good'
