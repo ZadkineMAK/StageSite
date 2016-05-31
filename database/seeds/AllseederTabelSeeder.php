@@ -18,6 +18,10 @@ class AllseederTabelSeeder extends Seeder
         \App\role::create([
             'name' => 'User'
         ]);
+        \App\role::create([
+            'name' => 'Test'
+        ]);
+
 
         \App\status::create([
             'name' => 'good'
