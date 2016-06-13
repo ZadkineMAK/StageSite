@@ -15540,6 +15540,7 @@ S2.define('jquery.select2',[
 }));
 
 (function() {
-
+    $(".search").select2();
 })();
+
 //# sourceMappingURL=all.js.map
