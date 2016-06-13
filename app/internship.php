@@ -9,6 +9,7 @@ class internship extends Model
     protected $fillable = [
         'startdate',
         'enddate',
+        'course_id',
         'contact_id',
         'status_id'
     ];

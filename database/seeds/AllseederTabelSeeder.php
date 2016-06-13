@@ -82,6 +82,7 @@ class AllseederTabelSeeder extends Seeder
         \App\internship::create([
             'startdate' => '01-05-2016',
             'enddate' => '10-05-2016',
+            'course_id' => 1,
             'contact_id' => '1',
             'status_id' => '1'
 
