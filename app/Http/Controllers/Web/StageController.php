@@ -61,7 +61,7 @@ class StageController extends Controller
     public function create()
     {
         $stage = internship::all();
-        return view('stage.create');
+        return view('stage.toevoegen');
     }
 
     /**

@@ -12,8 +12,8 @@
                         <h3>Voeg stage toe</h3>
                         {{-- Praktijkopleider stage toevoegen--}}
                         {{--end comment--}}
-
-                        {!! Form::open(array('route' => 'stageController@tovogen', 'class' => 'form')) !!}
+                        @if(Auth::user()->role-id == 1)
+                        {!! Form::open(array('route' => 'stageController@toevoegen', 'class' => 'form')) !!}
                         <div class="form-group{{ $erroers->has('name') ? 'has-error' : '' }}">
                             {{ form :: lapel('name') }}
                             {{ form:: text('name' , null, ['class => form-control'],['placeholder'=>'name']) }}
@@ -41,11 +41,37 @@
                                 </span>
                             @endif
                         </div>
-
-
+                        <div class="form-group{{ $erroers->has('course') ? 'has-error' : '' }}">
+                            {{ form :: lapel('course') }}
+                            {{ form:: text('course' , null, ['class => form-control'],['placeholder'=>'course']) }}
+                            @if($erroers->has('course'))
+                                <span class="help-block">
+                                    <strong>{{ $erroers->first('course') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                        <div class="form-group{{ $erroers->has('contact_id') ? 'has-error' : '' }}">
+                            {{ form :: lapel('contact_id') }}
+                            {{ form:: hidden('contact_id' , null, ['class => form-control']) }}
+                            @if($erroers->has('contact_id'))
+                                <span class="help-block">
+                                    <strong>{{ $erroers->first('contact_id') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                        <div class="form-group{{ $erroers->has('status_id') ? 'has-error' : '' }}">
+                            {{ form :: lapel('status_id') }}
+                            {{ form:: hidden('status_id' , null, ['class => form-control']) }}
+                            @if($erroers->has('status_id'))
+                                <span class="help-block">
+                                    <strong>{{ $erroers->first('status_id') }}</strong>
+                                </span>
+                            @endif
+                        </div>
 
                         {!! Form::close() !!}
-
+                    @else(<h3>Praktijkopleider allen kan stage toevoegen</h3>)
+                    @endif
                     </div>
                 </div>
             </div>

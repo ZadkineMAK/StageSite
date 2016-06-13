@@ -15,7 +15,6 @@ Route::post('stage/search', 'Web\StageController@search')->name('stage.search');
 Route::group(['middleware' => 'web'], function() {
     Route::get('/', 'Web\IndexController@index');
     Route::get('stage', 'Web\StageController@index');
-    route::get('stage' , 'web\stageController@tovogen');
     Route::get('stage/create', 'Web\StageController@create');
 
 });
