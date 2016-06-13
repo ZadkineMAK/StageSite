@@ -13,10 +13,17 @@
 
 Route::group(['middleware' => 'web'], function() {
     Route::get('/', 'Web\IndexController@index');
+    Route::resource('school', 'Web\SchoolController', ['only' => ['index', 'show']]);
+    Route::resource('admin/school', 'Web\AdminSchoolController', ['only' => ['index', 'show']]);
+    Route::resource('admin/gebruiker', 'Web\AdminGebruikerController', ['only' => ['index', 'show']]);
+    Route::resource('admin/stage', 'Web\AdminStageController', ['only' => ['index', 'show']]);
+    Route::resource('admin', 'Web\AdminController', ['only' => ['index', 'show']]);
 });
 
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+//Route::get('school.index','SchoolController@index');
 
