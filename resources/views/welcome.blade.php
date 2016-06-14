@@ -8,10 +8,13 @@
                     <div class="panel-heading">Welcome</div>
 
                     <div class="panel-body">
-                        <p>Welkom op onze website</p>
+                        Your Application's Landing Page.
                         @if(Auth::user())
                             @if(Auth::user()->role->id == 1)
-                                <p>You are logged in as an Admin.</p>
+                                <p>You are a admin</p>
+                            @endif
+                            @if(Auth::user()->role->id == 2)
+                                <p>you are a user</p>
                             @endif
                         @endif
                     </div>

@@ -1,0 +1,22 @@
+{
+  "name": "StageSite",
+  "description": "",
+  "main": "",
+  "authors": [
+    "mmagaber <mmagaber@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ZadkineMAK/StageSite",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "*",
+    "select2": "*",
+    "bootstrap-sass": "*"
+  }
+}

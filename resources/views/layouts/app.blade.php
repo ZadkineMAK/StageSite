@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
     <style>
         body {
             font-family: 'Lato';
@@ -49,6 +50,23 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ url('/profile') }}">Profiel</a></li>
+                    @if(Auth::user())
+                    <li><a href="{{ url('school') }}">Aangesloten scholen</a></li>
+                        @if(Auth::user()->role_id == 1)
+                            <li class="dropdown">
+                                <a href="{{ url('admin') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url('admin') }}">Admin Panel</a></li>
+                                    <li><a href="{{ url('admin/gebruiker') }}">Admin Gebruiker</a></li>
+                                    <li><a href="{{ url('admin/school') }}">Admin School</a></li>
+                                    <li><a href="{{ url('admin/stage') }}">Admin Stage</a></li>
+                                </ul>
+                            </li>
+                        @endif
+                        @if(Auth::user()->role_id == 2)
+                            <li><a href="{{ url('#') }}">User panel</a></li>
+                        @endif
+                        @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -74,6 +92,8 @@
     </nav>
 
     @yield('content')
+
+    <script src="{{ asset('js/all.js') }}"></script>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>

@@ -22,4 +22,9 @@ class location extends Model
 	{
 		return $this->hasOne('App\course');
 	}
+
+	public function getFullAddressAttribute()
+	{
+		return $this->address . ' ' . $this->zipcode . ' ' . $this->city;
+	}
 }
