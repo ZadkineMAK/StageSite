@@ -20,3 +20,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('profile', 'ProfileController@index');
+
+/*Route::get('/profile/edit', 'ProfileController@show')->name('profile.edit');*/
+Route::get('profile/edit/{id}', 'ProfileController@show');
+Route::put('profile/update','ProfileController@update' );
+
