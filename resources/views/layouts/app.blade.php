@@ -49,8 +49,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/profile') }}">Profiel</a></li>
                     @if(Auth::user())
+                    <li><a href="{{ url('/profile') }}">Profiel</a></li>
                     <li><a href="{{ url('school') }}">Aangesloten scholen</a></li>
                         @if(Auth::user()->role_id == 1)
                             <li class="dropdown">

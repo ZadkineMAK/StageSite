@@ -12,13 +12,10 @@
                         <div class="panel-body">
                             @foreach($schools as $school)
                                 <div class="well">
-                                    {{--<a href="{{ $school->school_id }}"> {{ $school->school->name }}</a>--}}
                                     <a href="{{ route('school.show', $school->id) }}">
                                         {{ $school->name }}
                                     </a>
-                                    {{--<a href="{{ route('contact.destroy', $school->id) }}" data-token="{{ csrf_token() }}" class="delete">Verwijderen</a>--}}
-                                    {{--<a href="{{ route('contact.edit', $school->id) }}">Wijzig</a>--}}
-                                </div>
+                                    </div>
                             @endforeach
                         </div>
                     @else

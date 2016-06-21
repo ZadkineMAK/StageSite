@@ -18,7 +18,7 @@ class CreateLocationsTable extends Migration
             $table->string('zipcode');
             $table->string('city');
             $table->integer('school_id')->unsigned();
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
             $table->timestamps();
         });
     }

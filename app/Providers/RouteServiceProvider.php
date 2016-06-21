@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot($router);
         $this->model('school', 'App\school');
+        $this->model('schoolandlocation', 'App\location');
     }
 
     /**

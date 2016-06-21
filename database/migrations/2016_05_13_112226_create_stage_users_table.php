@@ -17,7 +17,7 @@ class CreateStageUsersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('internship_id')->unsigned();
-            $table->foreign('internship_id')->references('id')->on('internships');
+            $table->foreign('internship_id')->references('id')->on('internships')->onDelete('cascade');
             $table->timestamps();
         });
     }

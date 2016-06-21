@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
+use App\school;
 use Illuminate\Http\Request;
 
-use App\school;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
-class AdminSchoolController extends Controller
+class AdminSchoolandlocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,6 @@ class AdminSchoolController extends Controller
      */
     public function index()
     {
-        $schools = school::all();
-        return view('admin.school.index', compact('schools'));
 
     }
 
@@ -28,9 +25,9 @@ class AdminSchoolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($school)
     {
-        return view('admin.school.create');
+        return view('admin.schoolandlocation.create', compact('school'));
 
     }
 
@@ -41,10 +38,9 @@ class AdminSchoolController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($school)
+    public function show($id)
     {
-        return view('admin.school.show', compact('school'));
-
+        //
     }
 
     /**
@@ -53,9 +49,10 @@ class AdminSchoolController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($school)
+    public function edit($location)
     {
-        return view('admin.school.edit', compact('school'));
+        return view('admin.schoolandlocation.edit', compact('location'));
+
     }
-    
+
 }

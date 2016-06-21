@@ -15,4 +15,14 @@ class stage_user extends Model
     {
         return $this->belongsToMany('App\stagetool');
     }
+
+    public function user()
+    {
+        return $this->hasOne('App\user');
+    }
+
+    public function internship()
+    {
+        return $this->hasOne('App\internship');
+    }
 }
