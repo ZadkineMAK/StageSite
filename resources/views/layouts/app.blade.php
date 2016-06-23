@@ -66,6 +66,10 @@
                         @if(Auth::user()->role_id == 2)
                             <li><a href="{{ url('#') }}">User panel</a></li>
                         @endif
+
+                        @if(Auth::user()->role_id == 1 || 5)
+                            <li><a href="{{ url('#') }}">Stage beheer</a></li>
+                        @endif
                         @endif
                 </ul>
 

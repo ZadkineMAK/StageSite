@@ -43,9 +43,15 @@
 
                         </div>
 
+                        <div class="form-group">
+                            {!! Form::label('name','Role:') !!}
+                            {!! Form::text('name',$gebruiker->role->name, ['class' => 'form-control', 'readonly']) !!}
+
+                        </div>
+
 
                         {!! Form::close() !!}
-                        {!! Form::open(array('route'=> array ('admin.gebruiker.edit', $gebruiker->contact_id), 'method'=>'GET')) !!}
+                        {!! Form::open(array('route'=> array ('admin.gebruiker.edit', $gebruiker->id), 'method'=>'GET')) !!}
                         {!! Form::submit('Aanpassen') !!}
                         {!! Form::close() !!}
                     </div>

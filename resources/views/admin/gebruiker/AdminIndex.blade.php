@@ -12,7 +12,7 @@
                                 <h2>Gebruikers</h2>
                                 <ol>
                                     @foreach($users as $gebruiker)
-                                        <li><a href="{{ url('admin/gebruiker', $gebruiker->contact_id)  }}">{{$gebruiker->contact->surname }} {{$gebruiker->contact->insertion }} {{$gebruiker->contact->familyname }} </a></li>
+                                        <li><a href="{{ url('admin/gebruiker', $gebruiker->id)  }}">{{$gebruiker->contact->surname }} {{$gebruiker->contact->insertion }} {{$gebruiker->contact->familyname }} </a></li>
                                     @endforeach
                                 </ol>
                             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\contact;
+use App\role;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -53,7 +54,8 @@ class AdminGebruikerController extends Controller
      */
     public function edit($gebruiker)
     {
-        return view('admin.gebruiker.AdminEdit', compact('gebruiker'));
+        $role = role::all()->pluck('name', 'id');
+        return view('admin.gebruiker.AdminEdit', compact('gebruiker', 'role'));
     }
 
 }

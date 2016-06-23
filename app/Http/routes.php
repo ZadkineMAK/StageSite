@@ -23,6 +23,7 @@ Route::group(['middleware' => 'web'], function() {
     Route::resource('admin', 'Web\AdminController', ['only' => ['index', 'show']]);
     Route::get('stage', 'Web\StageController@index');
     Route::get('stage/create', 'Web\StageController@create');
+    Route::resource('stagebeheer', 'Web\StagebeheerController', ['only' => ['index', 'show', 'edit', 'create']]);
 
 });
 
@@ -30,6 +31,8 @@ Route::group(['middleware' => 'api'], function(){
     Route::resource('admin/school', 'Api\AdminSchoolController', ['only' => ['store', 'update', 'destroy']]);
     Route::resource('admin/schoolandlocation', 'Api\AdminSchoolandlocationController', ['only' => ['store', 'update', 'destroy']]);
     Route::resource('admin/gebruiker', 'Api\AdminGebruikerController', ['only' => ['store', 'update', 'destroy']]);
+    Route::resource('stagebeheer', 'Api\StagebeheerController', ['only' => ['store', 'update', 'destroy']]);
+
 });
 
 

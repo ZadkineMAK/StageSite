@@ -20,7 +20,7 @@ class AllseederTabelSeeder extends Seeder
         ]);
 
         \App\role::create([
-            'name' => 'Student'
+            'name' => 'Student (actief)'
         ]);
 
         \App\role::create([
@@ -28,6 +28,10 @@ class AllseederTabelSeeder extends Seeder
         ]);
         \App\role::create([
             'name' => 'Docent'
+        ]);
+
+        \App\role::create([
+            'name' => 'Student (in-actief)'
         ]);
 
 
