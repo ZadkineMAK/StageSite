@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\contact;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +18,8 @@ class AdminGebruikerController extends Controller
      */
     public function index()
     {
-        return view('admin.gebruiker.index');
+        $users = User::all();
+        return view('admin.gebruiker.AdminIndex', compact('users'));
 
     }
 
@@ -30,59 +33,27 @@ class AdminGebruikerController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($gebruiker)
     {
-        //
+        return view('admin.gebruiker.AdminShow', compact('gebruiker'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($gebruiker)
     {
-        //
+        return view('admin.gebruiker.AdminEdit', compact('gebruiker'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
