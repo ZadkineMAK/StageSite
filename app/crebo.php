@@ -10,8 +10,8 @@ class crebo extends Model
         'name',
         'number'
     ];
-    public function cohort()
+    public function course()
     {
-        return $this->hasOne('App\cohort');
+        return $this->hasOne('App\course');
     }
 }

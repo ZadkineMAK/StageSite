@@ -9,7 +9,6 @@ class cohort extends Model
     protected $fillable = [
         'name',
         'period',
-        'crebo_id'
     ];
 
     public function crebo()

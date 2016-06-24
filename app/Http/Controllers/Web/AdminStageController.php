@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\contact;
+use App\course;
+use App\internship;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -27,19 +30,13 @@ class AdminStageController extends Controller
      */
     public function create()
     {
-        //
+        $contacts = contact::all()->pluck('surname', 'id');
+        $courses = course::all()->pluck('full_name', 'id');
+        $stage = internship::all();
+        return view('admin.stage.create', compact('contacts', 'courses','stage'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
@@ -63,26 +60,4 @@ class AdminStageController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

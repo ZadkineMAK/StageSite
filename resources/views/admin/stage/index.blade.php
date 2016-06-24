@@ -16,7 +16,7 @@
 
                         @endif
                     @else
-                        <p>ᕕ( ᐛ )ᕗ Login PLEASE</p>
+                        <p>Login PLEASE</p>
                     @endif
                 </div>
             </div>

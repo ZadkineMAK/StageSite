@@ -40,29 +40,91 @@ class AllseederTabelSeeder extends Seeder
 
 
         \App\status::create([
-            'name' => 'good'
+            'name' => 'available'
+
+        ]);\App\status::create([
+            'name' => 'unavailable'
+
+        ]);\App\status::create([
+            'name' => 'hold'
+
+        ]);\App\status::create([
+            'name' => 'in proces'
 
         ]);
         \App\crebo::create([
-            'name' => 'Mo',
+            'name' => 'applicatie',
             'number' => '675',
         ]);
+
+        \App\crebo::create([
+            'name' => 'Apothekersassistente',
+            'number' => '6758',
+        ]);
+
+        \App\crebo::create([
+            'name' => 'Veiligheid, Logistiek',
+            'number' => '765',
+        ]);
+
+        \App\crebo::create([
+            'name' => 'Techniek&Technologie',
+            'number' => '234',
+        ]);
+
+
+
         \App\school::create([
             'name' => 'Zadkine'
-
         ]);
+
+        \App\school::create([
+            'name' => 'Hoogschool DenHaag'
+        ]);
+
+        \App\school::create([
+            'name' => 'Albeda'
+        ]);
+
+        \App\school::create([
+            'name' => 'Inholand'
+        ]);
+
+        \App\school::create([
+            'name' => 'Amsterdam school'
+        ]);
+
         \App\companie::create([
-            'name' => 'zadkine',
+            'name' => 'Zadkine',
             'address' => 'posthumalaan',
             'zipcode' => '3071',
-            'city' => 'rotterdam',
+            'city' => 'Rotterdam',
             'phone' => '0126374848',
+
+        ]);\App\companie::create([
+            'name' => 'Albeda',
+            'address' => 'amsterdamstraat',
+            'zipcode' => '7892',
+            'city' => 'Amsterdam',
+            'phone' => '876544',
 
         ]);
         \App\cohort::create([
-            'name' => 'Mo',
-            'period' => '2015',
-            'crebo_id' => '1',
+            'name' => '2013-2015',
+            'period' => '2013-2015',
+
+        ]);\App\cohort::create([
+            'name' => '2015-2018',
+            'period' => '2015-2018',
+
+        ]);\App\cohort::create([
+            'name' => '2017-2020',
+            'period' => '2017-2020',
+
+        ]);
+        \App\cohort::create([
+            'name' => '2020-2023',
+            'period' => '2020-2023',
 
         ]);
         \App\location::create([
@@ -72,47 +134,130 @@ class AllseederTabelSeeder extends Seeder
             'school_id' => '1'
 
         ]);
+        \App\location::create([
+            'address' => 'Signhstraat',
+            'zipcode' => '3872',
+            'city' => 'Denhaag',
+            'school_id' => '2'
+
+        ]);
+        \App\location::create([
+        'address' => 'bombomstraat',
+        'zipcode' => '3762',
+        'city' => 'Amsterdam',
+        'school_id' => '3'
+
+    ]);
+        \App\location::create([
+        'address' => 'Proijhstraat',
+        'zipcode' => '3082',
+        'city' => 'Rotterdam',
+        'school_id' => '4'
+
+    ]);
+
         \App\course::create([
             'location_id' => '1',
             'cohort_id' => '1',
+            'crebo_id' => '1',
+
+
+        ]);
+
+        \App\course::create([
+            'location_id' => '2',
+            'cohort_id' => '2',
+            'crebo_id' => '2',
+
+
+        ]);
+        \App\course::create([
+            'location_id' => '3',
+            'cohort_id' => '3',
+            'crebo_id' => '3',
+        ]);
+
+        \App\course::create([
+            'location_id' => '4',
+            'cohort_id' => '4',
+            'crebo_id' => '4',
+
+
 
         ]);
         \App\contact::create([
             'surname' => 'Mohamed',
-            'insertion' => 'mma',
             'familyname' => 'Gaber',
             'email' => 'KAM@zadkine.com',
             'phone' => '06887878',
             'mobile' => '01076788',
             'companie_id' => '1',
 
-        ]);\App\contact::create([
-            'surname' => 'Kelvin',
-            'insertion' => 'van der',
-            'familyname' => 'Gaag',
-            'email' => 'kelvin@zadkine.com',
-            'phone' => '06-34716400',
-            'mobile' => '010-4216728',
-            'companie_id' => '1',
 
         ]);
-
         \App\contact::create([
             'surname' => 'Kelvin',
             'insertion' => 'van der',
             'familyname' => 'Gaag',
-            'email' => 'kelvin@zadkine.com',
-            'phone' => '06887878',
+            'email' => 'KAM@zadkine.com',
+            'phone' => '365758699',
             'mobile' => '01076788',
             'companie_id' => '1',
 
         ]);
+        \App\contact::create([
+            'surname' => 'Armando',
+            'familyname' => 'Janssen',
+            'email' => 'KAM@zadkine.com',
+            'phone' => '06887878',
+            'mobile' => '01076788',
+            'companie_id' => '1',
+
+
+        ]);
+
+        \App\contact::create([
+            'surname' => 'Bart',
+            'insertion' => 'van',
+            'familyname' => 'Venrooij',
+            'email' => 'KJKK@zadkine.com',
+            'phone' => '06887878',
+            'mobile' => '01076788',
+            'companie_id' => '1',
+
+
+        ]);
+
         \App\internship::create([
             'startdate' => '01-05-2016',
             'enddate' => '10-05-2016',
             'course_id' => 1,
             'contact_id' => '1',
             'status_id' => '1'
+
+        ]);
+        \App\internship::create([
+            'startdate' => '01-05-2013',
+            'enddate' => '10-05-2015',
+            'course_id' => 2,
+            'contact_id' => '2',
+            'status_id' => '2'
+
+        ]);
+        \App\internship::create([
+            'startdate' => '01-05-2016',
+            'enddate' => '19-01-2018',
+            'course_id' => 3,
+            'contact_id' => '3',
+            'status_id' => '3'
+
+        ]);
+        \App\internship::create([
+            'startdate' => '09-04-2015',
+            'enddate' => '06-01-2019',
+            'course_id' => 4,
+            'contact_id' => '4',
+            'status_id' => '4'
 
         ]);
         \App\User::create([

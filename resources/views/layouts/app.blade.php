@@ -52,14 +52,16 @@
                     @if(Auth::user())
                     <li><a href="{{ url('/profile') }}">Profiel</a></li>
                     <li><a href="{{ url('school') }}">Aangesloten scholen</a></li>
-                        @if(Auth::user()->role_id == 1)
+                    <li><a href="{{ url('stage') }}">Stage</a></li>
+
+                    @if(Auth::user()->role_id == 1)
                             <li class="dropdown">
                                 <a href="{{ url('admin') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('admin') }}">Admin Panel</a></li>
                                     <li><a href="{{ url('admin/gebruiker') }}">Admin Gebruiker</a></li>
                                     <li><a href="{{ url('admin/school') }}">Admin School</a></li>
-                                    <li><a href="{{ url('admin/stage') }}">Admin Stage</a></li>
+                                    <li><a href="{{ url('admin/stage/create') }}">Admin Stage</a></li>
                                 </ul>
                             </li>
                         @endif

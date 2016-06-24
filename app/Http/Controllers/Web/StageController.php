@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\companie;
 use App\course;
 use App\crebo;
 use App\internship;
 use App\location;
-use App\review;
-use Illuminate\Http\Request;
+use App\contact;
 
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -39,18 +38,13 @@ class StageController extends Controller
          */
         $input = $request->all();
 
-//        dd($input);
         $stages = internship::whereHas('course', function($query) use ($input) {
-            $query->where('location_id', $input['city'])->whereHas('cohort', function($q) use ($input) {
+            $query->where('location_id', $input['city'])->whereHas('crebo', function($q) use ($input) {
                 $q->where('crebo_id', $input['crebo']);
             });
         })->get();
+        return view('stage.search', compact('stages'));
 
-        foreach($stages as $stage) {
-            dd($stage->contact->companie->name);
-        }
-
-//        dd($stages);
     }
 
     /**
@@ -60,20 +54,15 @@ class StageController extends Controller
      */
     public function create()
     {
+        $contacts = contact::all()->pluck('id');
+        $courses = course::all()->pluck('full_name', 'id');
         $stage = internship::all();
-        return view('stage.toevoegen');
+        $location  = location::all()->pluck('address');
+
+        return view('stage.create', compact('contacts', 'courses','stage','location'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
@@ -81,9 +70,15 @@ class StageController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($stage)
     {
-        //
+        $stage = internship::findorfail($stage);
+        return view('stage.show', compact('stage', 'location'));
+
+//        $stage = $stage::find($stage);
+//        return $stage;
+
+
     }
 
     /**
@@ -94,29 +89,12 @@ class StageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $courses = course::all()->pluck('full_name', 'id');
+
+        $stage = internship::find($id);
+        return view('stage.edit',compact('stage', 'courses'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

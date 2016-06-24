@@ -18,6 +18,8 @@ class CreateCoursesTable extends Migration
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
             $table->integer('cohort_id')->unsigned();
             $table->foreign('cohort_id')->references('id')->on('cohorts')->onDelete('cascade');
+            $table->integer('crebo_id')->unsigned();
+            $table->foreign('crebo_id')->references('id')->on('crebos')->onDelete('cascade');
             $table->timestamps();
         });
     }
