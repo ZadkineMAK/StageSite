@@ -40,8 +40,9 @@ class AdminGebruikerController extends Controller
      */
     public function update(Request $request, $gebruiker)
     {
-        $gebruiker->contact->update($request->all());
-        return redirect(route('admin.gebruiker.index'))->with('status','De wijzigingen zijn opgeslagen.');
+        $gebruiker->update($request->all());
+        $gebruiker->contact()->update($request->all());
+        return redirect(route('admin.gebruiker.index'));
 
     }
 

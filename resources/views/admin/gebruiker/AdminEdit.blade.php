@@ -38,8 +38,8 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('name','Role:') !!}
-                            {!! Form::select('size', array($role), ['class' => 'form-control']) !!}
+                            {!! Form::label('role_id','Role:') !!}
+                            {!! Form::select('role_id', $role, null, ['class' => 'form-control']) !!}
 
                         </div>
 

@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration
             $table->integer('stage_user_id')->unsigned();
             $table->foreign('stage_user_id')->references('id')->on('stage_users')->onDelete('cascade');
             $table->integer('status_id')->unsigned();
-            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
             $table->timestamps();
         });
     }

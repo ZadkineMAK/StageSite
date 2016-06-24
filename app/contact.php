@@ -16,6 +16,11 @@ class contact extends Model
 		'companie_id'
 	];
 
+	public function getRoleIdAttribute()
+	{
+		return $this->User->role_id;
+	}
+
 	public function User()
 	{
 		return $this->hasOne('App\User');

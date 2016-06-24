@@ -96,6 +96,17 @@ class AllseederTabelSeeder extends Seeder
             'companie_id' => '1',
 
         ]);
+
+        \App\contact::create([
+            'surname' => 'Kelvin',
+            'insertion' => 'van der',
+            'familyname' => 'Gaag',
+            'email' => 'kelvin@zadkine.com',
+            'phone' => '06887878',
+            'mobile' => '01076788',
+            'companie_id' => '1',
+
+        ]);
         \App\internship::create([
             'startdate' => '01-05-2016',
             'enddate' => '10-05-2016',

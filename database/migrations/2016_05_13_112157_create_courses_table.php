@@ -17,7 +17,7 @@ class CreateCoursesTable extends Migration
             $table->integer('location_id')->unsigned();
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
             $table->integer('cohort_id')->unsigned();
-            $table->foreign('cohort_id')->references('id')->on('cohorts');
+            $table->foreign('cohort_id')->references('id')->on('cohorts')->onDelete('cascade');
             $table->timestamps();
         });
     }

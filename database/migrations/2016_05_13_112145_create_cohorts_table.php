@@ -17,7 +17,7 @@ class CreateCohortsTable extends Migration
             $table->string('name');
             $table->string('period');
             $table->integer('crebo_id')->unsigned();
-            $table->foreign('crebo_id')->references('id')->on('crebos');
+            $table->foreign('crebo_id')->references('id')->on('crebos')->onDelete('cascade');
             $table->timestamps();
         });
     }

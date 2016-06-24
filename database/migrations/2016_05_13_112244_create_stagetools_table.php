@@ -15,11 +15,11 @@ class CreateStagetoolsTable extends Migration
         Schema::create('stagetools', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('tool_id')->unsigned();
-            $table->foreign('tool_id')->references('id')->on('tools');
+            $table->foreign('tool_id')->references('id')->on('tools')->onDelete('cascade');
             $table->integer('stage_user_id')->unsigned();
             $table->foreign('stage_user_id')->references('id')->on('stage_users')->onDelete('cascade');
             $table->integer('companie_id')->unsigned();
-            $table->foreign('companie_id')->references('id')->on('companies');
+            $table->foreign('companie_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }
