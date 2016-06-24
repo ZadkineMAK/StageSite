@@ -11,9 +11,25 @@
                                 <h1>Admin panel</h1>
                                 <h2>Gebruikers</h2>
                                 <table class="table">
+                                    <theader><tr>
+                                            <th>Naam</th>
+                                            <th>Rechten</th>
+                                            <th>Wijzig</th>
+                                            <th>Verwijderen</th>
+                                        </tr></theader>
+                                    <tbody>
                                     @foreach($users as $gebruiker)
                                         <tr>
-                                        <td><li><a href="{{ url('admin/gebruiker', $gebruiker->contact_id)  }}">{{$gebruiker->contact->surname }} {{$gebruiker->contact->insertion }} {{$gebruiker->contact->familyname }} </a></li></td>
+                                            <td>
+                                                <p>{{$gebruiker->contact->surname}} {{$gebruiker->contact->insertion}} {{$gebruiker->contact->familyname}}</p>
+                                            </td>
+                                            <td>
+                                                <p>{{ $gebruiker->role->name }}</p>
+                                            </td>
+                                            <td>
+                                                <a href="{{ url('admin/gebruiker', $gebruiker->contact_id)  }}">Wijzig</a>
+                                            </td>
+                                            @if($gebruiker->role_id != 1)
                                             <td>
                                             {!! Form::open(array('route' => array('admin.gebruiker.destroy', $gebruiker->id), 'method' => 'delete')) !!}
 
@@ -21,7 +37,14 @@
                                             {!! Form::close() !!}
                                             </td>
                                         </tr>
+                                        @endif
+                                        @if($gebruiker->role_id == 1)
+                                            <td>
+                                                <p>Admin (Niet verwijderbaar)</p>
+                                            </td>
+                                            @endif
                                     @endforeach
+                                    </tbody>
                                 </table>
                             </div>
 
