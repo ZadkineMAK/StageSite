@@ -40,7 +40,7 @@
                                         @endif
                                         @if($gebruiker->role_id == 1)
                                             <td>
-                                                <p>Admin (Niet verwijderbaar)</p>
+                                                <p>Niet verwijderbaar</p>
                                             </td>
                                             @endif
                                     @endforeach
