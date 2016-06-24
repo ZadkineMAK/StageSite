@@ -40,7 +40,10 @@
                         <div class="form-group">
                             {!! Form::label('name','Mobiel:') !!}
                             {!! Form::text('name',$gebruiker->contact->mobile, ['class' => 'form-control', 'readonly']) !!}
-
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('name', 'Role:') !!}
+                            {!! Form::text('name',$gebruiker->role->name, ['class' => 'form-control', 'readonly']) !!}
                         </div>
 
                         <div class="form-group">

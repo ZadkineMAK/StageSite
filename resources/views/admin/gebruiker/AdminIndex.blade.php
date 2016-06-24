@@ -10,11 +10,19 @@
                             <div class="panel-heading">
                                 <h1>Admin panel</h1>
                                 <h2>Gebruikers</h2>
-                                <ol>
+                                <table class="table">
                                     @foreach($users as $gebruiker)
-                                        <li><a href="{{ url('admin/gebruiker', $gebruiker->id)  }}">{{$gebruiker->contact->surname }} {{$gebruiker->contact->insertion }} {{$gebruiker->contact->familyname }} </a></li>
+                                        <tr>
+                                        <td><li><a href="{{ url('admin/gebruiker', $gebruiker->contact_id)  }}">{{$gebruiker->contact->surname }} {{$gebruiker->contact->insertion }} {{$gebruiker->contact->familyname }} </a></li></td>
+                                            <td>
+                                            {!! Form::open(array('route' => array('admin.gebruiker.destroy', $gebruiker->id), 'method' => 'delete')) !!}
+
+                                            {!! Form::submit('Verwijderen') !!}
+                                            {!! Form::close() !!}
+                                            </td>
+                                        </tr>
                                     @endforeach
-                                </ol>
+                                </table>
                             </div>
 
 
@@ -27,5 +35,3 @@
         </div>
     </div>
 @endsection
-
-{{--<li><a href="{{ route('admin.gebruiker.show', $gebruiker->id) }}">{{$gebruiker->contact->surname }} {{$gebruiker->contact->insertion }} {{$gebruiker->contact->familyname }} </a></li>--}}

@@ -15,7 +15,7 @@ class CreateStageUsersTable extends Migration
         Schema::create('stage_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('internship_id')->unsigned();
             $table->foreign('internship_id')->references('id')->on('internships')->onDelete('cascade');
             $table->timestamps();

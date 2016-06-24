@@ -21,7 +21,7 @@ class CreateContactsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('mobile')->nullable();
             $table->integer('companie_id')->nullable()->unsigned();
-            $table->foreign('companie_id')->references('id')->on('companies');
+            $table->foreign('companie_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }

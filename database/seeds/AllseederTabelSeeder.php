@@ -29,6 +29,10 @@ class AllseederTabelSeeder extends Seeder
         \App\role::create([
             'name' => 'Docent'
         ]);
+        \App\role::create([
+           'name' => 'Student (inactief)'
+        ]);
+
 
         \App\role::create([
             'name' => 'Student (in-actief)'
@@ -82,6 +86,15 @@ class AllseederTabelSeeder extends Seeder
             'mobile' => '01076788',
             'companie_id' => '1',
 
+        ]);\App\contact::create([
+            'surname' => 'Kelvin',
+            'insertion' => 'van der',
+            'familyname' => 'Gaag',
+            'email' => 'kelvin@zadkine.com',
+            'phone' => '06-34716400',
+            'mobile' => '010-4216728',
+            'companie_id' => '1',
+
         ]);
         \App\internship::create([
             'startdate' => '01-05-2016',
@@ -103,7 +116,7 @@ class AllseederTabelSeeder extends Seeder
             'email' => 'user@user.nl',
             'password' => bcrypt('123456'),
             'role_id' => '2',
-            'contact_id' => '1'
+            'contact_id' => '2'
 
         ]);
         \App\stage_user::create([

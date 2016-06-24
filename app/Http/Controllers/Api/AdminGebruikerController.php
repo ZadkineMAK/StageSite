@@ -41,7 +41,7 @@ class AdminGebruikerController extends Controller
     public function update(Request $request, $gebruiker)
     {
         $gebruiker->contact->update($request->all());
-        return redirect(route('admin.gebruiker.index'));
+        return redirect(route('admin.gebruiker.index'))->with('status','De wijzigingen zijn opgeslagen!');
 
     }
 
@@ -51,8 +51,10 @@ class AdminGebruikerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($gebruiker)
     {
-        //
+        $gebruiker->delete();
+        return redirect(route('admin.gebruiker.index'));
+
     }
 }
