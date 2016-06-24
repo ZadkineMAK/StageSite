@@ -37,7 +37,7 @@
                         {!! Form::open() !!}
                         <div class="form-group">
                             {!! Form::label('name','School:') !!}
-                            {!! Form::text('name','Zadkine', ['class' => 'form-control', 'readonly']) !!}
+                            {!! Form::text('name','', ['class' => 'form-control', 'readonly']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('name','Opleding:') !!}

@@ -12,18 +12,18 @@
 */
 Route::post('stage/search', 'Web\StageController@search')->name('stage.search');
 
-Route::group(['middleware' => 'web'], function() {
-    Route::get('/', 'Web\IndexController@index');
-    Route::resource('school', 'Web\SchoolController', ['only' => ['index', 'show', 'create']]);
-    Route::resource('admin/school', 'Web\AdminSchoolController', ['only' => ['index', 'show', 'create', 'edit']]);
-    Route::get('admin/schoolandlocation/create/{school}', 'Web\AdminSchoolandlocationController@create')->name('admin.schoolandlocation.create');
-    Route::resource('admin/schoolandlocation', 'Web\AdminSchoolandlocationController', ['only' => ['index', 'show', 'edit']]);
-    Route::resource('admin/gebruiker', 'Web\AdminGebruikerController', ['only' => ['index', 'show','edit','create']]);
-    Route::resource('admin/stage', 'Web\AdminStageController', ['only' => ['index', 'show']]);
-    Route::resource('admin', 'Web\AdminController', ['only' => ['index', 'show']]);
-    Route::resource('stage', 'Web\StageController', ['only' => ['index', 'show', 'create']]);
-    Route::resource('stagebeheer', 'Web\StagebeheerController', ['only' => ['index', 'show', 'edit', 'create']]);
-
+Route::group(['middleware' => ['web'], 'namespace' => 'Web' ], function() {
+    Route::get('/', 'IndexController@index');
+    Route::resource('school', 'SchoolController', ['only' => ['index', 'show', 'create']]);
+    Route::resource('admin/school', 'AdminSchoolController', ['only' => ['index', 'show', 'create', 'edit']]);
+    Route::get('admin/schoolandlocation/create/{school}', 'AdminSchoolandlocationController@create')->name('admin.schoolandlocation.create');
+    Route::resource('admin/schoolandlocation', 'AdminSchoolandlocationController', ['only' => ['index', 'show', 'edit']]);
+    Route::resource('admin/gebruiker', 'AdminGebruikerController', ['only' => ['index', 'show','edit','create']]);
+    Route::resource('admin/stage', 'AdminStageController', ['only' => ['index', 'show']]);
+    Route::resource('admin', 'AdminController', ['only' => ['index', 'show']]);
+    Route::resource('stage', 'StageController', ['only' => ['index', 'show', 'create']]);
+    Route::resource('stagebeheer', 'StagebeheerController', ['only' => ['index', 'show', 'edit', 'create']]);
+    Route::resource('profile', 'ProfileController', ['only' => ['index', 'show', 'edit', 'create']]);
 });
 
 Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function() {
@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function()
     Route::resource('stagebeheer', 'StagebeheerController', ['only' => ['store', 'update', 'destroy']]);
     Route::resource('stage', 'StageController', ['only' => ['destroy', 'store']]);
     Route::resource('admin/stage', 'AdminStageController', ['only' => ['store']]);
+    Route::resource('profile', 'ProfileController', ['only' => ['store', 'update', 'destroy']]);
 });
 
 
@@ -41,9 +42,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('profile', 'ProfileController@index');
+//Route::get('profile', 'ProfileController@index');
 
 /*Route::get('/profile/edit', 'ProfileController@show')->name('profile.edit');*/
-Route::get('profile/edit/{id}', 'ProfileController@show');
-Route::put('profile/update','ProfileController@update' );
+//Route::get('profile/edit/{id}', 'ProfileController@show');
+//Route::put('profile/update','ProfileController@update' );
 

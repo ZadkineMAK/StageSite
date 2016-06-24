@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use App\contact;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile.profile');
+        return view('profile.index');
     }
 
     /**
@@ -31,17 +32,7 @@ class ProfileController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
+    
     /**
      * Display the specified resource.
      *
@@ -49,7 +40,7 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show($id)
+    public function show($profile)
     {
         $profile = Auth::user()->profile;
         return view('profile.edit',compact('profile'));
@@ -73,20 +64,5 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
-    {
-        Auth::user()->contact->update($request->all());
-        return redirect()->action('ProfileController@index')->with('status','De wijzigingen zijn opgeslagen!');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }
