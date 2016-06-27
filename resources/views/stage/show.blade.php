@@ -41,8 +41,6 @@
                             {!! Form::label('grade','Cijfer:') !!}
                             {!! Form::text('grade', null, ['class' => 'form-control']) !!}
                             {{ Form::hidden('stage_user_id', '1') }}
-                            {{ Form::hidden('companie_id', '1')}}
-
 
                             {!! Form::submit('Verstuur comment') !!}
 
@@ -51,12 +49,12 @@
                     </div>
                         <div class="">
                             <h2>Opmerkingen en bevindingen</h2>
-                            {{--@foreach($comments as $comment)
+                            @foreach($comments as $comment)
                             <hr>
                             <h3>Door: {{$comment->stage_user_id}}</h3>
                             <p><i>{{$comment->review}}</i></p>
                                 <span>Beoordeling: {{$comment->grade}}</span>
-                                @endforeach--}}
+                                @endforeach
                         </div>
                     </div>
 

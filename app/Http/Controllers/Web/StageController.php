@@ -79,11 +79,10 @@ class StageController extends Controller
      */
     public function show($stage)
     {
+        $comments = review::all();
         $stage = internship::findorfail($stage);
-        return view('stage.show', compact('stage', 'location'));
-
-//        $stage = $stage::find($stage);
-//        return $stage;
+        return view('stage.show', compact('stage', 'location', 'comments'));
+        
 
 
     }

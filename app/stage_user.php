@@ -18,7 +18,7 @@ class stage_user extends Model
 
     public function user()
     {
-        return $this->hasOne('App\user');
+        return $this->hasOne('App\User');
     }
 
     public function internship()

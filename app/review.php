@@ -9,7 +9,7 @@ class review extends Model
     protected $fillable = [
         'grade',
         'review',
-        'user_id',
+        'stage_user_id',
         'status_id',
         'companie_id'
     ];
@@ -25,6 +25,6 @@ class review extends Model
     }
 
     public function user(){
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\stage_user');
     }
 }

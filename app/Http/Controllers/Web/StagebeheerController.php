@@ -17,7 +17,7 @@ class StagebeheerController extends Controller
      */
     public function index()
     {
-$tools = tool::all();
+        $tools = tool::all();
         return view('stagebeheer.index', compact('tools'));
     }
 

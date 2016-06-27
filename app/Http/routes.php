@@ -41,8 +41,9 @@ Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function()
     Route::resource('admin/stage', 'AdminStageController', ['only' => ['store']]);
     Route::resource('comment', 'CommentController', ['only' => ['store']]);
     Route::resource('profile', 'ProfileController', ['only' => ['store', 'update', 'destroy']]);
-});
     Route::resource('tool', 'ToolController', ['only' => ['store']]);
+});
+
 
 
 Route::auth();

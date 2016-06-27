@@ -16,8 +16,6 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->decimal('grade', 3,1);
             $table->longtext('review');
-            $table->unsignedInteger('companie_id');
-            $table->foreign('companie_id')->references('id')->on('companies')->onDelete('cascade');
             $table->integer('stage_user_id')->unsigned();
             $table->foreign('stage_user_id')->references('id')->on('stage_users')->onDelete('cascade');
             $table->integer('status_id')->unsigned();
