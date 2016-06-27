@@ -31,7 +31,7 @@
                             {!! Form::label('mobiel','Mobiel:') !!}
                             {!! Form::text('mobiel',Auth::user()->contact->mobile, ['class' => 'form-control', 'readonly']) !!}
                         </div>
-                        <a href="{{ url('profile/edit/') }}">Wijzigen</a>
+                            <a href="{{ url('profile/edit/') }}">Wijzigen</a>
                         {!! Form::close() !!}
 
                     </div>

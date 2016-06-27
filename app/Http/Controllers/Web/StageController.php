@@ -9,6 +9,7 @@ use App\location;
 use App\contact;
 
 use App\review;
+use App\stage_user;
 use App\status;
 use App\tool;
 use Illuminate\Http\Request;
@@ -81,7 +82,9 @@ class StageController extends Controller
     {
         $comments = review::all();
         $stage = internship::findorfail($stage);
-        return view('stage.show', compact('stage', 'location', 'comments'));
+        $stageUser = stage_user::where('user_id', Auth::user()->id)->first();
+ 
+        return view('stage.show', compact('stage', 'location', 'comments', 'stageUser'));
         
 
 

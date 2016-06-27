@@ -32,7 +32,6 @@
                             {!! Form::text('mobile',Auth::user()->contact->mobile, ['class' => 'form-control']) !!}
                         </div>
                         {!! Form::submit('verstuur') !!}
-                        {{--<input type="submit">--}}
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -40,3 +39,5 @@
         </div>
     </div>
 @endsection
+
+

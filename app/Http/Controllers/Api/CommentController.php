@@ -33,9 +33,7 @@ class CommentController extends Controller
     {
         $input = $request->all();
         $input['status_id'] = 1;
-        $internshipuser = stage_user::where('id',$input['stage_user_id'])->first();
-        unset($input['stage_user_id']);
-        $input['stage_user_id'] = $internshipuser->id;
+       
         review::create($input);
         return redirect()->back()->with('status', 'Je comment is toegevoegd');
     }

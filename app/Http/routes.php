@@ -12,7 +12,6 @@
 */
 Route::post('stage/search', 'Web\StageController@search')->name('stage.search');
 
-
 Route::group(['middleware' => ['web'], 'namespace' => 'Web' ], function() {
     Route::get('/', 'IndexController@index');
     Route::resource('school', 'SchoolController', ['only' => ['index', 'show', 'create']]);
@@ -27,8 +26,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Web' ], function() {
     Route::resource('tool', 'Web\ToolController', ['only' => ['index', 'show', 'edit', 'create']]);
     Route::resource('comment', 'Web\CommentController', ['only' => ['index', 'show', 'edit', 'create']]);
     Route::resource('profile', 'ProfileController', ['only' => ['index', 'show', 'edit', 'create']]);
-
-
 });
 
 Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function() {
@@ -43,6 +40,7 @@ Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function()
     Route::resource('profile', 'ProfileController', ['only' => ['store', 'update', 'destroy']]);
     Route::resource('tool', 'ToolController', ['only' => ['store']]);
 });
+
 
 
 

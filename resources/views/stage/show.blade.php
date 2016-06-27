@@ -33,14 +33,14 @@
 
                     <div class="comment-placement">
                         <h4>Indien je hier stage hebt gelopen, laat ons weten wat je er van vond!</h4>
-                        @if(Auth::User()->role_id != 2 && 4 && 7 )
+                        @if(Auth::User()->role_id != 2 && 4 && 7 && $stageUser != false )
                             {!! Form::open([ 'route' => 'comment.store', 'method' => 'POST'])!!}
                             {!! Form::label('review','Comment:') !!}
                             {!! Form::text('review', null, ['class' => 'form-control' , 'placeholder' => 'Laat vooral weten welke tools je hebt gebruikt en wat je allemaal geleerd hebt!']) !!}
 
                             {!! Form::label('grade','Cijfer:') !!}
                             {!! Form::text('grade', null, ['class' => 'form-control']) !!}
-                            {{ Form::hidden('stage_user_id', '1') }}
+                            {!!  Form::hidden('stage_user_id', $stageUser->user_id) !!}
 
                             {!! Form::submit('Verstuur comment') !!}
 
