@@ -1,3 +1,69 @@
 @import "resources/assets/bower/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "resources/assets/bower/select2/dist/css/select2";
 
+body{
+  background-color: #fdfff4;
+ .navbar-default {
+   background-color: black;
+   box-shadow: 3px 3px 5px grey;
+
+}
+  .navbar-header{
+    .navbar-brand{
+      color: whitesmoke;
+      transition: 0.8s;
+
+    }
+    .navbar-brand:hover{
+      color: #c3c5be;
+      transition: 0.8s;
+
+    }
+  }
+  .navbar-default{
+    .navbar-nav {
+      li{
+        a{
+          color: whitesmoke;
+          transition: 0.8s;
+        }
+        a:hover{
+          color: #c3c5be;
+          background-color: black;
+          transition: 0.8s;
+
+        }
+      }
+    }
+  }
+  .navbar-nav{
+    li{
+      .dropdown-menu{
+        background-color: black;
+      }
+      .logout{
+        background-color: black;
+        transition: 0.8s;
+      }.logout:hover{
+        background-color: black;
+      color: whitesmoke;
+               transition: 0.8s;
+
+             }
+    }
+  }
+  .panel-default{
+    box-shadow: 7px 7px 5px grey;
+    margin-bottom: 50px;
+  }
+  footer{
+    width:100%;
+    height:30px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background-color: black;
+    color: whitesmoke;
+text-align: center;
+  }
+}

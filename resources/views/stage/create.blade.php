@@ -43,6 +43,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('course') ? 'has-error' : ''  }}">
+                                {{ form :: label('School', 'School:') }}
                                 {{ form :: select('course_id',$courses , null , ['id' => 'course_id', 'class' =>'form-control'] ) }}
                             </div>
                             <div class="form-group{{ $errors->has('tool') ? 'has-error' : ''  }}">
