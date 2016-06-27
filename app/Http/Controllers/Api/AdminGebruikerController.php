@@ -25,6 +25,15 @@ class AdminGebruikerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    private function validator($input)
+    {
+        return Validator::make($input, [
+            'email' => 'unique:Users,email'
+
+        ]);
+    }
+
+
     public function store(Request $request)
     {
         //
@@ -40,9 +49,14 @@ class AdminGebruikerController extends Controller
      */
     public function update(Request $request, $gebruiker)
     {
+        $input = $request->all();
+        $validator = $this->validator($input);
+        if ($validator->fails()) {
+            return redirect()->back()->with('status', 'Het ingevulde e-mailadres is al in gebruik.');
+        }
         $gebruiker->update($request->all());
         $gebruiker->contact()->update($request->all());
-        return redirect(route('admin.gebruiker.index'));
+        return redirect(route('admin.gebruiker.index'))->with('status','Wijzigingen zijn opgeslagen');
 
     }
 

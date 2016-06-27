@@ -29,6 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->model('school', 'App\school');
         $this->model('gebruiker','App\User');
         $this->model('schoolandlocation', 'App\location');
+        $this->model('comment', 'App\review');
     }
 
     /**

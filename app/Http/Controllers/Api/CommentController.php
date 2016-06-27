@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\tool;
+use App\Http\Controllers\Controller;
+use App\review;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
-class ToolController extends Controller
+class CommentController extends Controller
 {
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -21,12 +31,10 @@ class ToolController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        dd($input);
-        tool::create($input);
-        $input->save();
-
+        $input['status_id'] = 1;
+        review::create($input);
+        return redirect()->back()->with('status', 'Je comment is toegevoegd');
     }
-
 
     /**
      * Update the specified resource in storage.

@@ -100,6 +100,8 @@ class AllseederTabelSeeder extends Seeder
             'zipcode' => '3071',
             'city' => 'Rotterdam',
             'phone' => '0126374848',
+            'email' => 'zadkine@stage.nl',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet dignissim libero eu blandit. Sed id laoreet leo. Etiam aliquet nisi eget cursus fringilla. Vestibulum ac quam eget ex posuere interdum sit amet eu leo. Ut aliquet maximus mattis. Etiam risus felis, rutrum et posuere eget, accumsan volutpat purus. Ut nec neque neque. In ultricies sodales ligula sit amet pretium. Donec nec odio nulla. Morbi quis justo sem. Nullam at enim sollicitudin diam suscipit ultricies at et sapien. Proin rutrum consectetur nisl, in iaculis odio luctus vitae. Suspendisse potenti. Aenean a vehicula sapien, a hendrerit ex.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec libero risus, semper id ornare dictum, tincidunt at nulla. Phasellus imperdiet at lorem vehicula rhoncus. Quisque accumsan metus a tempor ornare. Nunc lacinia nulla ut rhoncus ultricies. Fusce iaculis interdum felis pretium tempus. Duis sit amet luctus diam. Curabitur et maximus tortor, venenatis pulvinar magna. Nunc consectetur rhoncus ultricies. Sed mi nunc, accumsan eget ex ac, maximus fermentum massa. Sed orci lorem, pharetra consequat augue sed, mollis lacinia dolor. Proin bibendum, erat sit amet pulvinar eleifend, sem justo accumsan quam, id vestibulum velit justo eget diam. Sed condimentum laoreet sapien sodales rutrum.',
 
         ]);\App\companie::create([
             'name' => 'Albeda',
@@ -107,6 +109,8 @@ class AllseederTabelSeeder extends Seeder
             'zipcode' => '7892',
             'city' => 'Amsterdam',
             'phone' => '876544',
+            'email' => 'albeda@stage.nl',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet dignissim libero eu blandit. Sed id laoreet leo. Etiam aliquet nisi eget cursus fringilla. Vestibulum ac quam eget ex posuere interdum sit amet eu leo. Ut aliquet maximus mattis. Etiam risus felis, rutrum et posuere eget, accumsan volutpat purus. Ut nec neque neque. In ultricies sodales ligula sit amet pretium. Donec nec odio nulla. Morbi quis justo sem. Nullam at enim sollicitudin diam suscipit ultricies at et sapien. Proin rutrum consectetur nisl, in iaculis odio luctus vitae. Suspendisse potenti. Aenean a vehicula sapien, a hendrerit ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec libero risus, semper id ornare dictum, tincidunt at nulla. Phasellus imperdiet at lorem vehicula rhoncus. Quisque accumsan metus a tempor ornare. Nunc lacinia nulla ut rhoncus ultricies. Fusce iaculis interdum felis pretium tempus. Duis sit amet luctus diam. Curabitur et maximus tortor, venenatis pulvinar magna. Nunc consectetur rhoncus ultricies. Sed mi nunc, accumsan eget ex ac, maximus fermentum massa. Sed orci lorem, pharetra consequat augue sed, mollis lacinia dolor. Proin bibendum, erat sit amet pulvinar eleifend, sem justo accumsan quam, id vestibulum velit justo eget diam. Sed condimentum laoreet sapien sodales rutrum.',
 
         ]);
         \App\cohort::create([
@@ -278,13 +282,6 @@ class AllseederTabelSeeder extends Seeder
         \App\stage_user::create([
             'user_id' => '1',
             'internship_id' => '1'
-
-        ]);
-        \App\review::create([
-            'grade' => 'second',
-            'review' => 'blablabla',
-            'stage_user_id' => '1',
-            'status_id' => '1'
 
         ]);
         \App\tool::create([

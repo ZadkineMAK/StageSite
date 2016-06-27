@@ -31,13 +31,12 @@
                             {!! Form::label('mobiel','Mobiel:') !!}
                             {!! Form::text('mobile',Auth::user()->contact->mobile, ['class' => 'form-control']) !!}
                         </div>
-                                <input type="submit">
-                            {!! Form::close() !!}
+                        {!! Form::submit('verstuur') !!}
+                        {{--<input type="submit">--}}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
-

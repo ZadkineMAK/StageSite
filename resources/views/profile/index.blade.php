@@ -31,25 +31,9 @@
                             {!! Form::label('mobiel','Mobiel:') !!}
                             {!! Form::text('mobiel',Auth::user()->contact->mobile, ['class' => 'form-control', 'readonly']) !!}
                         </div>
-                            <a href="{{ url('profile/edit/id') }}">Wijzigen</a>
+                        <a href="{{ url('profile/edit/') }}">Wijzigen</a>
                         {!! Form::close() !!}
-                        <h2>School gegevens</h2>
-                        {!! Form::open() !!}
-                        <div class="form-group">
-                            {!! Form::label('name','School:') !!}
-                            {!! Form::text('name','', ['class' => 'form-control', 'readonly']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('name','Opleding:') !!}
-                            {!! Form::text('name','Zadkine', ['class' => 'form-control', 'readonly']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('name','Periode:') !!}
-                            {!! Form::text('name','Zadkine', ['class' => 'form-control', 'readonly']) !!}
-                        </div>
-                            <a href="#">Wijzig</a>
 
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

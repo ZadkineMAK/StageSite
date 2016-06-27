@@ -9,12 +9,22 @@ class review extends Model
     protected $fillable = [
         'grade',
         'review',
-        'stage_user_id',
-        'status_id'
+        'user_id',
+        'status_id',
+        'companie_id'
     ];
 
     public function status()
     {
         return $this->hasOne('App\status');
+    }
+
+    public function companie()
+    {
+        return $this->hasOne('App\companie');
+    }
+
+    public function user(){
+        return $this->hasOne('App\User');
     }
 }

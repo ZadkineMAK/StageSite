@@ -24,8 +24,10 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Web' ], function() {
     Route::resource('admin', 'AdminController', ['only' => ['index', 'show']]);
     Route::resource('stage', 'StageController', ['only' => ['index', 'show', 'create']]);
     Route::resource('stagebeheer', 'StagebeheerController', ['only' => ['index', 'show', 'edit', 'create']]);
-    Route::resource('profile', 'ProfileController', ['only' => ['index', 'show', 'edit', 'create']]);
     Route::resource('tool', 'Web\ToolController', ['only' => ['index', 'show', 'edit', 'create']]);
+    Route::resource('comment', 'Web\CommentController', ['only' => ['index', 'show', 'edit', 'create']]);
+    Route::resource('profile', 'ProfileController', ['only' => ['index', 'show', 'edit', 'create']]);
+
 
 });
 
@@ -37,6 +39,9 @@ Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function()
     Route::resource('stagebeheer', 'StagebeheerController', ['only' => ['store', 'update', 'destroy']]);
     Route::resource('stage', 'StageController', ['only' => ['destroy', 'store']]);
     Route::resource('admin/stage', 'AdminStageController', ['only' => ['store']]);
+    Route::resource('comment', 'CommentController', ['only' => ['store']]);
+    Route::resource('profile', 'ProfileController', ['only' => ['store', 'update', 'destroy']]);
+});
     Route::resource('tool', 'ToolController', ['only' => ['store']]);
 
 
@@ -44,9 +49,9 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-//Route::get('profile', 'ProfileController@index');
+/*Route::get('profile', 'ProfileController@index');
 
-/*Route::get('/profile/edit', 'ProfileController@show')->name('profile.edit');*/
-//Route::get('profile/edit/{id}', 'ProfileController@show');
-//Route::put('profile/update','ProfileController@update' );
+Route::get('/profile/edit', 'ProfileController@show')->name('profile.edit');
+Route::get('profile/edit/{id}', 'ProfileController@show');
+Route::put('profile/update','ProfileController@update' );*/
 

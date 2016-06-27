@@ -7,11 +7,14 @@ use App\crebo;
 use App\internship;
 use App\location;
 use App\contact;
+
+use App\review;
 use App\status;
 use App\tool;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class StageController extends Controller
@@ -32,7 +35,11 @@ class StageController extends Controller
     }
 
     public function search(Request $request){
-//        dd($request);
+
+        /**
+         * Stage where cohort id = 1
+         * Stage where locatie id = 1
+         */
         $input = $request->all();
 
         $stages = internship::whereHas('course', function($query) use ($input) {
@@ -40,7 +47,7 @@ class StageController extends Controller
                 $q->where('crebo_id', $input['crebo']);
             });
         })->get();
-        return view('stage.search', compact('stages'));
+        return view('stage.search', compact('stages','comments'));
 
     }
 

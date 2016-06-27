@@ -19,6 +19,8 @@ class CreateCompaniesTable extends Migration
             $table->string('zipcode');
             $table->string('city');
             $table->string('phone')->nullable();
+            $table->string('email');
+            $table->longText('description');
             $table->timestamps();
 
         });

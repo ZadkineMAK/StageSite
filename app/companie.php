@@ -24,5 +24,10 @@ class companie extends Model
         return $this->belongsToMany('App\tool', 'stagetool', 'companie_id', 'tool_id');
     }
 
+    public function review()
+    {
+        return $this->belongsToMany('App\review');
+    }
+
    
 }

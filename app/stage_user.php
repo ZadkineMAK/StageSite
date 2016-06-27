@@ -25,4 +25,8 @@ class stage_user extends Model
     {
         return $this->hasOne('App\internship');
     }
+
+    public function review(){
+        return $this->belongsTo('App\review');
+    }
 }

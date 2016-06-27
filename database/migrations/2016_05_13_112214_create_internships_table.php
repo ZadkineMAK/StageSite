@@ -26,6 +26,8 @@ class CreateInternshipsTable extends Migration
         });
     }
 
+
+
     /**
      * Reverse the migrations.
      *

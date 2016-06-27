@@ -34,7 +34,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         Auth::user()->contact->update($request->all());
-        return redirect()->action('ProfileController@index')->with('status','De wijzigingen zijn opgeslagen!');
+        return redirect()->action('Web\ProfileController@index')->with('status','De wijzigingen zijn opgeslagen!');
     }
 
     /**
