@@ -44,8 +44,16 @@
                                 </div>
 
 
-                                <div class="form-group{{ $errors->has('course') ? 'has-error' : ''  }}">
-                                    {{ form :: select('course_id',$courses , null , ['id' => 'course_id', 'class' =>'form-control'] ) }}
+                                {{--<div class="form-group{{ $errors->has('course') ? 'has-error' : ''  }}">--}}
+                                    {{--{{ form :: select('course_id',$courses , null , ['id' => 'course_id', 'class' =>'form-control'] ) }}--}}
+                                {{--</div>--}}
+
+                                <div class="form-group{{ $errors->has('tool') ? 'has-error' : ''  }}">
+                                    {{ form :: select('tool_id',$tools , null , ['id' => 'tool_id', 'class' =>'form-control'] ) }}
+                                </div>
+
+                                <div class="form-group{{ $errors->has('status_id') ? 'has-error' : ''  }}">
+                                    {{ form :: select('status_id' ,$status, null , ['id' => 'status_id', 'class' =>'form-control'] ) }}
                                 </div>
 
 

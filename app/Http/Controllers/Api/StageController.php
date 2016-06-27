@@ -25,19 +25,19 @@ class StageController extends Controller
     public function store( Request $request)
     {
         $input = $request->all();
-//        dd($input['contact_id']);
         $input['status_id'] = 1;
+        dd($input);
         internship::create($input);
 
         dd(' success you add a new intership in');
     }
 
-    public function edit($id)
-    {
-        $stage = internship::all()->pluck('full_name','id');
-
-        return view('stage.edit',compact('stage'));
-    }
+//    public function edit($id)
+//    {
+//        $stage = internship::all()->pluck('full_name','id');
+//
+//        return view('stage.edit',compact('stage'));
+//    }
 
 
     /**

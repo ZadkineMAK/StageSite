@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\contact;
-use App\course;
-use App\internship;
-use App\status;
-use App\tool;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminStageController extends Controller
+class ToolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +16,7 @@ class AdminStageController extends Controller
      */
     public function index()
     {
-        return view('admin.stage.index');
-
+        //
     }
 
     /**
@@ -32,16 +26,8 @@ class AdminStageController extends Controller
      */
     public function create()
     {
-
-        $contacts = contact::all()->pluck('surname', 'id');
-        $tools = tool::all()->pluck('name', 'id');
-        $status = status::all()->pluck('name', 'id');
-//        $courses = course::all()->pluck('full_name', 'id');
-//        $stage = internship::all();
-        return view('admin.stage.create', compact('contacts','tools','status'));
-//        'courses','stage'
+        return view('tool.create');
     }
-
 
 
     /**

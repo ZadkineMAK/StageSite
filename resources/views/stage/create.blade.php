@@ -11,7 +11,7 @@
                         <h3>Voeg stage toe</h3>
                         {{-- Praktijkopleider stage toevoegen--}}
                         {{--end comment--}}
-                        @if(Auth::user()->role->id == 1)
+                        @if(Auth::user()->role->id == 1 || 4 || 5)
                             {!! Form::open([ 'route' => 'stage.store', 'method' => 'POST']) !!}
 
                             <div class="form-group{{ $errors->has('name') ? 'has-error' : '' }}">
@@ -44,6 +44,24 @@
 
                             <div class="form-group{{ $errors->has('course') ? 'has-error' : ''  }}">
                                 {{ form :: select('course_id',$courses , null , ['id' => 'course_id', 'class' =>'form-control'] ) }}
+                            </div>
+                            <div class="form-group{{ $errors->has('tool') ? 'has-error' : ''  }}">
+                                {{ form :: select('tool_id',$tools , null , ['id' => 'tool_id', 'class' =>'form-control'] ) }}
+                            </div>
+                        {{--@if(Auth::user()->role->id == 5)--}}
+                                {{--{!! Form::open(['route' => ['stage.store',$tool->id] , 'method' =>'POST']) !!}--}}
+                            {{--<div class="form-group">--}}
+                                {{--{{ form :: label('tool') }}--}}
+                                {{--{{ form:: text('tool' , null, ['class' => 'form-control', 'placeholder'=>'tool']) }}--}}
+                            {{--</div>--}}
+                            {{--<div class="form-group">--}}
+                                {{--{{ Form::submit('Create', ['class' => 'btn btn-primary']) }}--}}
+                            {{--</div>--}}
+                            {{--{!! Form::close()!!}}--}}
+                        {{--@endif--}}
+
+                            <div class="form-group{{ $errors->has('status_id') ? 'has-error' : ''  }}">
+                                {{ form :: select('status_id' ,$status, null , ['id' => 'status_id', 'class' =>'form-control'] ) }}
                             </div>
 
                             <div class="form-group{{ $errors->has('contact') ? 'has-error' : ''  }}">

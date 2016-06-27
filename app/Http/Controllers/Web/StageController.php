@@ -7,7 +7,8 @@ use App\crebo;
 use App\internship;
 use App\location;
 use App\contact;
-
+use App\status;
+use App\tool;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -31,11 +32,7 @@ class StageController extends Controller
     }
 
     public function search(Request $request){
-
-        /**
-         * Stage where cohort id = 1
-         * Stage where locatie id = 1
-         */
+//        dd($request);
         $input = $request->all();
 
         $stages = internship::whereHas('course', function($query) use ($input) {
@@ -55,11 +52,14 @@ class StageController extends Controller
     public function create()
     {
         $contacts = contact::all()->pluck('id');
+        $status = status::all()->pluck('name','id');
+        $tools = tool::all()->pluck('name', 'id');
         $courses = course::all()->pluck('full_name', 'id');
-        $stage = internship::all();
-        $location  = location::all()->pluck('address');
+//        $stage = internship::all();
+//        $location  = location::all()->pluck('address');
 
-        return view('stage.create', compact('contacts', 'courses','stage','location'));
+
+        return view('stage.create', compact('contacts','tools','status','courses'));
     }
 
 

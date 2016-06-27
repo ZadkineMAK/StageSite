@@ -27,7 +27,7 @@
                                                 <p>{{ $gebruiker->role->name }}</p>
                                             </td>
                                             <td>
-                                                <a href="{{ url('admin/gebruiker', $gebruiker->contact_id)  }}">Wijzig</a>
+                                                <a href="{{ url('admin/gebruiker', $gebruiker->id)  }}">Wijzig</a>
                                             </td>
                                             @if($gebruiker->role_id != 1)
                                             <td>

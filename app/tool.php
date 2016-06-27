@@ -12,7 +12,9 @@ class tool extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'status_id'
+        'name',
+        'description',
+        'status_id'
     ];
 
     /**
@@ -24,6 +26,10 @@ class tool extends Model
     public function companies()
     {
         return $this->belongsToMany('App\companie', 'stagetool', 'tool_id', 'companie_id');
+    }
+
+    public function intership(){
+        return $this->hasOne('App\intership');
     }
 }
 

@@ -13,7 +13,8 @@
                             <h1>Zoek een stage</h1>
                         </div>
                         <div class="panel-body">
-                            <form class="form-horizontal" role="form" method="POST" action="{{ route('stage.search') }}">
+                            <form class="form-horizontal" role="form" method="POST"
+                                  action="{{ route('stage.search') }}">
                                 {{ csrf_field() }}
 
                                 <div class="form-group"{{$errors->has('crebo')? ' has-error' : '' }}>
@@ -42,7 +43,12 @@
                                     <a class="btn btn-link" href="{{ url('#') }}"></a>
                                 </div>
                             </form>
+                            @if(Auth::user()->role_id == 5)
+
+                                <h3><a class="btn btn-primary" href="{{ url('stage/create') }}">Voeg stage toe</a></h3>
+                            @endif
                         </div>
+
                     @else
                         <h2>you have to login </h2>
                     @endif

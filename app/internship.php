@@ -11,7 +11,8 @@ class internship extends Model
         'enddate',
         'course_id',
         'contact_id',
-        'status_id'
+        'status_id',
+        'tool'
     ];
 
     public function course()
@@ -32,5 +33,10 @@ class internship extends Model
     public function users()
     {
         return $this->belongsToMany('App\user', 'stage_user', 'internship_id', 'user_id');
+    }
+
+    public function tool()
+    {
+        return $this->belongsToMany('App\tool');
     }
 }

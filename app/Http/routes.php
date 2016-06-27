@@ -19,10 +19,11 @@ Route::group(['middleware' => 'web'], function() {
     Route::get('admin/schoolandlocation/create/{school}', 'Web\AdminSchoolandlocationController@create')->name('admin.schoolandlocation.create');
     Route::resource('admin/schoolandlocation', 'Web\AdminSchoolandlocationController', ['only' => ['index', 'show', 'edit']]);
     Route::resource('admin/gebruiker', 'Web\AdminGebruikerController', ['only' => ['index', 'show','edit','create']]);
-    Route::resource('admin/stage', 'Web\AdminStageController', ['only' => ['index', 'show']]);
+    Route::resource('admin/stage', 'Web\AdminStageController', ['only' => ['index', 'show','create']]);
     Route::resource('admin', 'Web\AdminController', ['only' => ['index', 'show']]);
     Route::resource('stage', 'Web\StageController', ['only' => ['index', 'show', 'create']]);
     Route::resource('stagebeheer', 'Web\StagebeheerController', ['only' => ['index', 'show', 'edit', 'create']]);
+    Route::resource('tool', 'Web\ToolController', ['only' => ['index', 'show', 'edit', 'create']]);
 
 });
 
@@ -34,8 +35,9 @@ Route::group(['middleware' => ['auth', 'api'], 'namespace' => 'Api'], function()
     Route::resource('stagebeheer', 'StagebeheerController', ['only' => ['store', 'update', 'destroy']]);
     Route::resource('stage', 'StageController', ['only' => ['destroy', 'store']]);
     Route::resource('admin/stage', 'AdminStageController', ['only' => ['store']]);
-});
+    Route::resource('tool', 'ToolController', ['only' => ['store']]);
 
+});
 
 Route::auth();
 

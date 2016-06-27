@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\contact;
-use App\course;
-use App\internship;
 use App\tool;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminStageController extends Controller
+class ToolController extends Controller
 {
+
 
     /**
      * Store a newly created resource in storage.
@@ -23,22 +21,11 @@ class AdminStageController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $input['status_id'] = 1;
-        internship::create($input);
-        dd(' success');
-//        return redirect()->route('admin.stage.create');
-    }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $stage = internship::all()->pluck('full_name','id');
+        dd($input);
+        tool::create($input);
+        $input->save();
+//        return view('')
 
-        return view('stage.edit',compact('stage'));
     }
 
 
@@ -51,9 +38,7 @@ class AdminStageController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-
+        //
     }
 
     /**
@@ -64,9 +49,6 @@ class AdminStageController extends Controller
      */
     public function destroy($id)
     {
-//        $stage = internship::all();
-//
-//        internship::destroy($id,$stage);
-
+        //
     }
 }
